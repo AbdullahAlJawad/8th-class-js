@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Glenn Maxwell</title></head>
+    <body>
+        <p id="student1"></p>
+        <p id="student2"></p>
+        <script>
+            //creating a class
+            class student{
+                constructor(name,year){
+                    this.name= name;
+                    this.year= year;
+                }
+                 age(){
+                    let date = new Date();
+                    return date.getFullYear()-this.year;
+                }
+            }
+            let student1 = new student("Jawad",2008);
+            document.getElementById("student1").innerHTML="My name is" + student1.name + "I born in" + student1.year + ". And my age is " + student1.age();
+            let student2 = new student("Maxwell",1989);
+            document.getElementById("student2").innerHTML="My name is" + student2.name + "I born in" + student2.year + ". And my age is " + student2.age();
+            //other project
+
+            class animal{
+                constructor(name){
+                    this.name = name;
+
+                }
+                speak(){
+                    console.log('${this.name}make a noise');
+                }
+            }
+            class dog extends animal {
+                constructor(name,breed){
+                    super(name);
+                    this.breed = breed;
+                }
+                speak(){
+                    console.log('${this.name} barks.');
+                }
+            }
+
+
+            let animal1 = new animal('Generic animal');
+            animal.speak();
+            let dog1 = new dog('Rex','German Shepherd');
+            dog.speak();
+            console.log(dog.name);
+            console.log(dog.breed);
+        </script>
+    </body>
+</html>
